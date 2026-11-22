@@ -22,9 +22,9 @@ def ask(question: str) -> None:
             {"role": "system", "content": SYSTEM},
             {"role": "user", "content": question},
         ],
-        temperature=2,
+        # temperature=2, #测试温度
         stream=False,
-        extra_body={"thinking": {"type": "disabled"}},
+        # extra_body={"thinking": {"type": "disabled"}},    #关闭思考模式
     )
     print(resp.choices[0].message.content)
     usage = resp.usage
